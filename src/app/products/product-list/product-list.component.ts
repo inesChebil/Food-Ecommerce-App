@@ -34,7 +34,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.http.get(this._jsonUrlProducts).subscribe(
-      (data) => {
+      (data: any) => {
         // console.log(data.items);
         let products = data.items;
         products = products.map((item) => {
