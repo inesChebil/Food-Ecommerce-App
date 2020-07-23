@@ -1,0 +1,24 @@
+<section class="products">
+  <div class="section-title">
+    <h2>Our Products</h2>
+  </div>
+  <div class="products-center" *ngIf="products">
+    <article class="product" *ngFor="let product of products">
+      <div class="img-container">
+        <img src=" {{ product.image }}" alt="product" class="product-img" />
+        <button
+          class="bag-btn"
+          data-id="{{ product.id }}"
+          (click)="AddToBasket(product.id)"
+          [disabled]="purchasing[product.id]"
+        >
+          <i class="fas fa-shopping-cart"></i>
+          {{ purchasing[product.id] ? "In Cart" : "add to basket" }}
+        </button>
+      </div>
+      <h3>{{ product.title }}</h3>
+      <h4>{{ product.price }}</h4>
+    </article>
+  </div>
+  <div *ngIf="!products">no products</div>
+</section>

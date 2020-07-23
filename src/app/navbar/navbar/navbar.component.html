@@ -1,0 +1,24 @@
+<nav class="navbar">
+  <div class="navbar-center">
+    <span class="nav-icon"><i class="fas fa-bars"></i></span>
+    <img src="assets/logo.svg" alt="Food Logo" class="logo" />
+    <!-- <div>Delicious <span style="color: #f09d51;">Food</span></div> -->
+    <div class="cart-btn" (click)="openCartBtn()">
+      <span class="nav-icon">
+        <i class="fas fa-cart-plus"></i>
+      </span>
+      <div class="cart-items">{{ cartItems }}</div>
+    </div>
+  </div>
+</nav>
+<app-main></app-main>
+<app-product-list
+  (purchasingChange)="cartItemsChanged($event)"
+  (productSelected)="onSelectProduct($event)"
+></app-product-list>
+<app-shopping-cart
+  [cart]="cart"
+  [opened]="opened"
+  [cartItems]="cartItems"
+  [cartTotal]="cartTotal"
+></app-shopping-cart>
