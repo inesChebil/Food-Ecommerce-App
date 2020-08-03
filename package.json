@@ -4,11 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": " ng build --prod --baseHref=” https://ineschebil.github.io/Food-Ecommerce-App/ ",
+    "build": " ng build --prod --output-path docs --baseHref=” https://ineschebil.github.io/Food-Ecommerce-App/ ",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "deploy": "ng deploy --base-href=https://ineschebil.github.io/Food-Ecommerce-App/"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
